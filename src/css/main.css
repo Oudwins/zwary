@@ -87,6 +87,7 @@ body {
 /* IMG HERO */
 .page {
   min-height: 90vh;
+  padding: 0 5% 0 5%;
   display: flex;
   align-items: center;
   justify-content: center;
