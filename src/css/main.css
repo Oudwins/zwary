@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Poppins:400,500&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.slide-cont {
+  position: relative;
+  background: radial-gradient(#5d7786, #343e3d);
+}
+
+/* ! Reusable Components */
+
+.btn {
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.btn--outline {
+  border: 1px solid #e4e4e4;
+  transition: all 300ms linear;
+}
+
+.btn--outline:hover {
+  background: #e4e4e4;
+  color: black;
+}
+
+/* ! Header */
+.header {
+  min-height: 10vh;
+  width: 100vw;
+  padding: 0 5% 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo,
+.nav__link,
+.nav__link--btn {
+  color: #e4e4e4;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+.logo {
+  font-family: 'Dancing Script', cursive;
+}
+
+.nav__ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav__link,
+.nav__link--btn {
+  margin: 0 30px;
+  position: relative;
+}
+
+.nav__link:hover {
+  color: white;
+}
+
+/* !Pages */
+
+.page--menu,
+.page--team {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  opacity: 0%;
+  pointer-events: none;
+}
+/* IMG HERO */
+.page {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page__left {
+  height: 540px;
+  overflow: hidden;
+  margin-right: 2rem;
+  flex: 0 1 200;
+}
+.page__right {
+  flex: 0 2 200;
+}
+
+.page__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page__img {
+  transition: transform 300ms ease-in-out;
+}
+.page__img--left {
+  transform: translateY(-10%);
+}
+
+.page__img--right {
+  transform: translateY(10%);
+}
+.page__link:hover .page__img--left,
+.page__link:hover .page__img--right {
+  transform: translate(0%, 0%);
+}
+/* Content */
+.page__right {
+  color: white;
+  margin-left: 2rem;
+}
+.page__header {
+  margin-bottom: 2.5rem;
+}
+
+.page__title {
+  font-weight: 500;
+  font-size: 4.5rem;
+}
+.page__subtitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.page__content {
+  display: flex;
+  font-size: 1.5rem;
+  width: 66%;
+  margin-top: 2.5rem;
+}
+
+.page__text {
+  width: 60%;
+}
+
+.page__btn {
+  align-self: center;
+  margin-left: auto;
+}
+
+/* !Dots */
+
+.pages {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -5%);
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+  margin: 0 auto 0 auto;
+}
+
+.pages__slide {
+  transform: scale(2);
+  fill: #e4e4e4;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 300ms ease-in-out;
+}
+
+.pages__slide--active {
+  opacity: 1;
+}
+
+/* !Media Queries */
+
+@media screen and (max-width: 1500px) {
+  .page__left,
+  .page__img {
+    height: 500px;
+  }
+  .page__title {
+    font-size: 3.5rem;
+  }
+  .page__subtitle {
+    font-size: 1.5rem;
+  }
+}
