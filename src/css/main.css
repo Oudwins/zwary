@@ -45,6 +45,7 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 1;
+  position: relative;
 }
 
 .logo,
@@ -72,7 +73,15 @@ body {
 .nav__link:hover {
   color: white;
 }
-
+/* Burger Menu */
+.burger {
+  position: absolute;
+  top: 40%;
+  right: 6%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(6%, -40%);
+}
 /* !Pages */
 
 .page--menu,
@@ -99,9 +108,6 @@ body {
   margin-right: 2rem;
   flex: 0 1 200;
 }
-.page__right {
-  flex: 0 2 200;
-}
 
 .page__link {
   display: flex;
@@ -126,6 +132,7 @@ body {
 .page__right {
   color: white;
   margin-left: 2rem;
+  flex: 0 2 200;
 }
 .page__header {
   margin-bottom: 2.5rem;
@@ -162,7 +169,7 @@ body {
   position: absolute;
   bottom: 5%;
   left: 50%;
-  transform: translate(-50%, -5%);
+  transform: translate(-50%, 5%);
   display: flex;
   justify-content: space-between;
   width: 10%;
@@ -192,6 +199,86 @@ body {
     font-size: 3.5rem;
   }
   .page__subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .page__content {
+    width: 90%;
+  }
+  .pages {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .page__left,
+  .page__img {
+    height: 400px;
+  }
+  .page {
+    flex-direction: column;
+    padding: 2rem 5% 8rem 5%;
+    text-align: center;
+  }
+  .page__header {
+    margin: 1rem 0 1rem 0;
+  }
+  .page__content {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0px;
+  }
+  .page__text {
+    width: 70%;
+    margin: 0 auto 1rem auto;
+  }
+
+  .page__btn {
+    align-self: center;
+    margin-left: 0;
+  }
+  .page__left,
+  .page__right {
+    margin: 0 auto;
+  }
+  /* Buger Menu Activate */
+  .nav__ul {
+    opacity: 1;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #5d7786;
+    clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%);
+    transition: clip-path 300ms ease-in;
+  }
+  .nav__ul--open {
+    clip-path: circle(1400px at 100% -10%);
+    -webkit-clip-path: circle(1400px at 100% -10%);
+  }
+  .burger {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 640px) {
+  .page__title {
+    font-size: 2.5rem;
+  }
+  .page__subtitle {
     font-size: 1.5rem;
+  }
+  .page__content {
+    font-size: 1rem;
   }
 }
