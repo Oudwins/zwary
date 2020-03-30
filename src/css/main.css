@@ -245,7 +245,6 @@ body {
   }
   /* Buger Menu Activate */
   .nav__ul {
-    opacity: 1;
     pointer-events: none;
     position: fixed;
     top: 0;
@@ -254,21 +253,24 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 35% 0;
+    justify-content: space-between;
     background: #5d7786;
     clip-path: circle(50px at 100% -10%);
     -webkit-clip-path: circle(50px at 100% -10%);
-    transition: clip-path 300ms ease-in;
+    transition: clip-path 400ms ease-out;
   }
   .nav__ul--open {
     clip-path: circle(1400px at 100% -10%);
     -webkit-clip-path: circle(1400px at 100% -10%);
+    pointer-events: all;
   }
   .burger {
     opacity: 1;
     pointer-events: all;
     transform: scale(0.9);
     cursor: pointer;
+    z-index: 1;
   }
 }
 @media screen and (max-width: 640px) {

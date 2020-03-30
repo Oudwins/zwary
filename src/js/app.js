@@ -3,6 +3,5 @@ const navUl = document.querySelector('.nav__ul');
 const navItems = document.querySelectorAll('.nav__item');
 
 hamburger.addEventListener('click', () => {
-  navUl.classList.add('.nav__ul--open');
-  console.log('toggled');
+  navUl.classList.toggle('nav__ul--open');
 });
