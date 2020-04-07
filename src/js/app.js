@@ -4,5 +4,8 @@ const navItems = document.querySelectorAll('.nav__item');
 
 hamburger.addEventListener('click', () => {
   navUl.classList.toggle('nav__ul--open');
+<<<<<<< HEAD
   console.log('toggled');
+=======
+>>>>>>> clip-path-test
 });
